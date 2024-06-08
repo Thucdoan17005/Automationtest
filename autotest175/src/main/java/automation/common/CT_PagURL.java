@@ -10,5 +10,6 @@ public class CT_PagURL {
 	public static String URL_SELENIUM_RADIO = "https://demo.seleniumeasy.com/basic-radiobutton-demo.html";
 	public static String URL_SELENIUM_DROPDOWN = "https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
 	public static String URL_SELENIUM_DROPDOWN1 = "http://demo.seleniumeasy.com/input-form-demo.html";
-	
+	public static String URL_SELENIUM_POPUP = "https://www.agoda.com/c/booking/?tag=_gK7qitZSgUgIb9GWjA_34p9jMSMkWt_Bv9Y2aQ-RtgxNzE3NTg5Njcz&aid=309654&ds=HUv8ArdOYcNM6odN";
+
 }
