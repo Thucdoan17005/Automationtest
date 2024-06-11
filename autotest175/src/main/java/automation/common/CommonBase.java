@@ -15,7 +15,7 @@ public class CommonBase {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		return driver;
 		
 	}
