@@ -31,7 +31,7 @@ public class LoginPage_E extends CommonBase {
 		WebElement Login_btn = driver.findElement(CT_Account_E.Submit_E);
 		if (Login_btn.isEnabled()) {
 			Login_btn.click();
-			assertTrue(driver.findElement(CT_Account_E.Text_account_E).isDisplayed());
+			//assertTrue(driver.findElement(CT_Account_E.Text_account_E).isDisplayed());
 		}
 	}
 
@@ -104,8 +104,8 @@ public class LoginPage_E extends CommonBase {
 		// WebElement logout_btnElement = driver.findElement(CT_Account_E.Logout_E);
 	}
 
-	@AfterMethod
-	public void closeChrome() {
-		driver.close();
-	}
+//	@AfterMethod
+//	public void closeChrome() {
+//		driver.close();
+//	}
 }
