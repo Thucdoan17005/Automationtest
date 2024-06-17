@@ -19,7 +19,6 @@ public class UpdateInformation {
 	}
 	
 	public void Login_function(String Email, String Pass) {
-
 		Email_Element.sendKeys(Email);
 		Password_Element.sendKeys(Pass);
 		Submit.click();
