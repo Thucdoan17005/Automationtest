@@ -12,5 +12,8 @@ public class CT_PagURL {
 	public static String URL_SELENIUM_DROPDOWN1 = "http://demo.seleniumeasy.com/input-form-demo.html";
 	public static String URL_SELENIUM_POPUP = "https://www.agoda.com/c/booking/?tag=_gK7qitZSgUgIb9GWjA_34p9jMSMkWt_Bv9Y2aQ-RtgxNzE3NTg5Njcz&aid=309654&ds=HUv8ArdOYcNM6odN";
 	public static String URL_TEDU = "https://tedu.com.vn/dang-nhap.html";
-
+	public static String URL_GURU = "https://demo.guru99.com/test/";
+	public static String URL_ALERT = "https://demo.automationtesting.in/Alerts.html";
+	public static String URL_GURU99 = "https://demo.guru99.com/test/delete_customer.php";
+	public static String URL_AlertDemo = "https://seleniumpractise.blogspot.com/2019/01/alert-demo.html";
 }

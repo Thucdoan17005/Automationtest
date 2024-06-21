@@ -18,4 +18,6 @@ public class CT_account_TD {
 	public static By Register_text = By.xpath("//a[@title='Đăng ký']");
 	
 	public static By Result_text = By.xpath("//div[@class= 'post-title']");
+	
+
 }
