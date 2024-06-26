@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import automation.common.CT_PagURL;
@@ -15,8 +17,11 @@ import automation.common.CommonBase;
 
 public class Day12_Dropdownlist extends CommonBase {
 	@BeforeMethod
-	public void openChrome() {
-		driver = initDriverTest(CT_PagURL.URL_SELENIUM_DROPDOWN);
+	@Parameters("brower")
+	public void openChrome(@Optional("edge") String browerName) {
+		setupDriver(browerName);
+		driver.get(CT_PagURL.URL_SELENIUM_DROPDOWN);
+		//driver = initDriverTest(CT_PagURL.URL_SELENIUM_DROPDOWN);
 	}
 
 	@Test
@@ -43,9 +48,9 @@ public class Day12_Dropdownlist extends CommonBase {
 		Thread.sleep(3000);
 	}
 
-	@AfterMethod
-	public void closeChrome() {
-		driver.close();
-	}
+//	@AfterMethod
+//	public void closeChrome() {
+//		driver.close();
+//	}
 
 }

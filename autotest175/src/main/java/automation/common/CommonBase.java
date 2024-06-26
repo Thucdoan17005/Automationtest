@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class CommonBase {
 	private static final long initWaitTime = 0;
@@ -91,5 +92,44 @@ public class CommonBase {
 			e.printStackTrace();
 		}
 	}
+	public WebDriver initChromeTest() {
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");
+		driver= new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		return driver;
+	}
+	public WebDriver initFirefoxTest() {
+		System.setProperty("webdriver.firefox.driver", System.getProperty("user.dir") + "\\driver\\geckodriver.exe");
+		driver= new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		return driver;
+	}
+	public WebDriver initEdgeTest() {
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "\\driver\\msedgedriver.exe");
+		driver= new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		return driver;
+	}
+	public WebDriver setupDriver(String browerName) {
+		switch (browerName.trim().toLowerCase()) {
+		case "chrome":
+			driver= initChromeTest();
+			break;
+		case "firefox":
+			driver= initFirefoxTest();
+			break;
+		case "edge":
+			driver= initEdgeTest();
+			break;
 
+		default:
+			System.out.println("Brower: "+ browerName+ "is invalid, launching Chrome as brower of choice...");
+			driver= initChromeTest();
+		}
+		return driver;
+	}
+	
 }

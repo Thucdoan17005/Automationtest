@@ -16,4 +16,7 @@ public class CT_PagURL {
 	public static String URL_ALERT = "https://demo.automationtesting.in/Alerts.html";
 	public static String URL_GURU99 = "https://demo.guru99.com/test/delete_customer.php";
 	public static String URL_AlertDemo = "https://seleniumpractise.blogspot.com/2019/01/alert-demo.html";
+	public static String URL_GURU992 = "https://demo.guru99.com/popup.php";
+	public static String URL_IFAME = "https://codestar.vn/";
+	public static String URL_IFAMEHW = "https://mediamart.vn/";
 }
