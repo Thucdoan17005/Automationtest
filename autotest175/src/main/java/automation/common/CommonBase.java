@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,7 @@ import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class CommonBase {
-	private static final long initWaitTime = 0;
+	protected static final long initWaitTime = 0;
 	public WebDriver driver;
 	
 	public WebDriver initDriverTest(String url) {
@@ -60,6 +61,16 @@ public class CommonBase {
 			inputTextJavaScript_ToValueAttribute(locator, value);
 		}
 	}
+	
+	public void clickByJs(By locator, String value) {
+		WebElement element = getElementPresentDOM(locator);
+		try {
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();" , element);
+		} catch (StaleElementReferenceException ex) {
+			pause(1000);
+			clickByJs(locator, value);;
+		}
+	}
 
 	public void scrollToElement(By locator) {
 		WebElement element = getElementPresentDOM(locator);
@@ -69,6 +80,12 @@ public class CommonBase {
 	public WebElement getElementPresentDOM(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(initWaitTime));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		return driver.findElement(locator);
+	}
+	
+	public WebElement getElementAllPresentDOM(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(initWaitTime));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
 		return driver.findElement(locator);
 	}
 
@@ -84,6 +101,17 @@ public class CommonBase {
 		element.clear();
 		element.sendKeys(value);
 	} 
+	
+	public void type(By locator, Keys key) {
+		WebElement element = getElementPresentDOM(locator);
+		element.clear();
+		element.sendKeys(key.TAB);
+	}
+	
+	public String getText(By locator) {
+		WebElement element = getElementPresentDOM(locator);
+	 return	element.getText();
+	}
 
 	public void pause(long timeInMillis) {
 		try {

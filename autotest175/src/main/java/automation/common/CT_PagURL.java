@@ -19,4 +19,5 @@ public class CT_PagURL {
 	public static String URL_GURU992 = "https://demo.guru99.com/popup.php";
 	public static String URL_IFAME = "https://codestar.vn/";
 	public static String URL_IFAMEHW = "https://mediamart.vn/";
+	public static String URL_TECH = "https://techydevs.com/demos/themes/html/listhub-demo/listhub/index.html";
 }

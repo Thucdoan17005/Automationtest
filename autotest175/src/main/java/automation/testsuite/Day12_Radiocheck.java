@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -38,7 +39,7 @@ public class Day12_Radiocheck extends CommonBase {
 		}
 	}
 	
-	@AfterClass
+	@AfterMethod
 	public void closeChrome() {
 		driver.close();
 	}
